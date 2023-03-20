@@ -1,1 +1,1 @@
-# vickygumina.gitub.io
+# vickygumina.github.io
