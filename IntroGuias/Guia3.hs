@@ -15,7 +15,7 @@ g 131 = 1
 h :: Integer -> Integer
 h 131  = f (g 131) 
 h 16  = f (g 16) 
-h 8  = f (g 8) 
+h 8  = f (g 8)
 
 --Ejercicio2 especificar e implementar
 --a
@@ -264,3 +264,8 @@ posPrimerPar (t0,t1,t2) | esMultiploDe t0 2 = 0
                         | mod t0 2 /= 0 && esMultiploDe t1 2 = 1
                         | mod t0 2 /= 0 && mod t1 2 /= 0 && esMultiploDe t2 2 = 2
                         | otherwise = 4 
+
+{-g
+crearPar :: a ->b ->(a, b): crea un par a partir de sus dos componentes dadas por separado (debe funcionar para
+elementos de cualquier tipo)
+-}
