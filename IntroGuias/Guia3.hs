@@ -118,11 +118,7 @@ problema sumaDistintos (a,b,c: Int): Int{
 -}
 sumaDistintos :: Integer -> Integer -> Integer -> Integer
 sumaDistintos a b c = sonDistintos a b + sonDistintos b c + sonDistintos c a
-{-a/=b && a/=c && b/=c = a+b+c
-                    | a==b && a/=c && b/=c = c
-                    | a/=b && a==c && b/=c = b
-                    | a/=b && a/=c && b==c = a
-                    | otherwise = 0-}
+
 
 sonDistintos :: Integer -> Integer -> Integer
 sonDistintos a b | a /= b = a
