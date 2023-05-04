@@ -105,23 +105,28 @@ mismoIntervalo a b | a<=3 && b<=3 = True
 
 {-g
 sumaDistintos: que dados tres numeros enteros calcule la suma sin sumar repetidos (si los hubiera).
-Aca lo pense como que si hay valores repetidos no se suman, y solo devuelve el valor que no se repite.
+Aca lo pense como que si hay valores repetidos lo sumo una vez.
 
 problema sumaDistintos (a,b,c: Int): Int{
     requiere {True}
     asegura { a!=b && a!=c && b!=c => res = a+b+c}
-    asegura { a=b && a!=c && b!=c => res = c}
-    asegura { a!=b && a=c && b!=c => res = b}
-    asegura { a!=b && a!=c && b=c => res = a}
+    asegura { a=b && a!=c && b!=c => res = a+c}
+    asegura { a!=b && a=c && b!=c => res = c+b}
+    asegura { a!=b && a!=c && b=c => res = a+b}
     asegura { a=b && a=c => res = 0}
 }
 -}
 sumaDistintos :: Integer -> Integer -> Integer -> Integer
-sumaDistintos a b c | a/=b && a/=c && b/=c = a+b+c
+sumaDistintos a b c = sonDistintos a b + sonDistintos b c + sonDistintos c a
+{-a/=b && a/=c && b/=c = a+b+c
                     | a==b && a/=c && b/=c = c
                     | a/=b && a==c && b/=c = b
                     | a/=b && a/=c && b==c = a
-                    | otherwise = 0
+                    | otherwise = 0-}
+
+sonDistintos :: Integer -> Integer -> Integer
+sonDistintos a b | a /= b = a
+                 | otherwise = 0
 
 {-h
 esMultiploDe: dados dos numeros naturales, decidir si el primero es multiplo del segundo.
