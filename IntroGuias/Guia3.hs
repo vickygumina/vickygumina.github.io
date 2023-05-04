@@ -262,9 +262,11 @@ problema posPrimerPar (t:Int x Int x Int): Int{
 
 posPrimerPar :: (Integer,Integer,Integer)->Integer
 posPrimerPar (t0,t1,t2) | esMultiploDe t0 2 = 0
-                        | mod t0 2 /= 0 && esMultiploDe t1 2 = 1
-                        | mod t0 2 /= 0 && mod t1 2 /= 0 && esMultiploDe t2 2 = 2
+                        | esMultiploDe t1 2 = 1
+                        | esMultiploDe t2 2 = 2
                         | otherwise = 4 
+
+
 
 {-g
 crearPar :: a ->b ->(a, b): crea un par a partir de sus dos componentes dadas por separado (debe funcionar para
