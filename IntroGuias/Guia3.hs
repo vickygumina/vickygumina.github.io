@@ -238,15 +238,15 @@ problema sumarSoloMultiplos (t:Int x Int x Int, a: Int): Int{
 }
 -}
 
+esMultiplo :: Integer -> Integer -> Integer
+esMultiplo a b | mod a b == 0 = a
+               | otherwise = 0
+
+
 sumarSoloMultiplos :: (Integer,Integer,Integer) -> Integer -> Integer
-sumarSoloMultiplos (t0,t1,t2) a | esMultiploDe t0 a && esMultiploDe t1 a && esMultiploDe t2 a = t0 + t1 + t2
-                                | esMultiploDe t0 a && esMultiploDe t1 a && mod t2 a /= 0 = t0 + t1 
-                                | mod t0 a /= 0 && esMultiploDe t1 a && esMultiploDe t2 a = t1 + t2 
-                                | esMultiploDe t0 a && mod t1 a /= 0 && esMultiploDe t2 a = t0 + t2
-                                | esMultiploDe t0 a && mod t1 a /= 0 && mod t2 a /= 0 = t0
-                                | mod t0 a /= 0 && esMultiploDe t1 a && mod t2 a /= 0 = t1
-                                | mod t0 a /= 0 && mod t1 a /= 0 && esMultiploDe t2 a = t2
-                                | otherwise = 0
+sumarSoloMultiplos (t0,t1,t2) a = esMultiplo t0 a + esMultiplo t1 a + esMultiplo t2 a
+
+
 
 {-f
 posPrimerPar: dada una terna de enteros, devuelve la posicion del primer numero par si es que hay alguno, 
