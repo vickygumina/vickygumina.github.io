@@ -53,13 +53,18 @@ def factorial_de_cinco()->int:
 print(factorial_de_cinco())
 
 #Ejercicio2
-#a
+#1
 nombre:str= str(input("Ingrese su nombre "))
 def imprimir_saludo(nombre:str):
     print("Hola",nombre)
 
 imprimir_saludo(nombre)
 
-#b
+#2
+numero:int = int(input("Ingrese un numero positivo: "))
+def raiz_cuadrada_de(numero):
+    print(sqrt(numero))
+
+raiz_cuadrada_de(numero)    
 
 
